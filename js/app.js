@@ -1,6 +1,27 @@
 /*
  * Create a list that holds all of your cards
  */
+const card = [
+'fa-star',
+'fa-star',
+'fa-leaf',
+'fa-leaf',
+'fa-diamond',
+'fa-diamond',
+'fa-cube',
+'fa-cube',
+'fa-bomb',
+'fa-bomb',
+'fa-bolt',
+'fa-bolt',
+'fa-bicycle',
+'fa-bicycle',
+'fa-anchor',
+'fa-anchor',
+];
+
+let cards = [...card];
+
 
 
 /*
