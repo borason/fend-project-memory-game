@@ -1,28 +1,15 @@
 /*
  * Create a list that holds all of your cards
  */
-const card = [
-'fa-star',
-'fa-star',
-'fa-leaf',
-'fa-leaf',
-'fa-diamond',
-'fa-diamond',
-'fa-cube',
-'fa-cube',
-'fa-bomb',
-'fa-bomb',
-'fa-bolt',
-'fa-bolt',
-'fa-bicycle',
-'fa-bicycle',
-'fa-anchor',
-'fa-anchor',
-];
+let cards = document.getElementsByClassName('card');
 
-let cards = [...card];
+const deck = document.querySelector('.deck');
 
+let cardArray = [...cards];
 
+const resetButton = document.querySelector('.restart').addEventListener('click', function() {
+  makeGrid();
+});
 
 /*
  * Display the cards on the page
@@ -44,6 +31,14 @@ function shuffle(array) {
     }
 
     return array;
+}
+
+function makeGrid () {
+  shuffle(cardArray);
+  for (let i = 0; i < cardArray.length; i++) {
+  let newCardClass = cardArray[i];
+  deck.appendChild(newCardClass);
+  }
 }
 
 
