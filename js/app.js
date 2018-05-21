@@ -7,6 +7,19 @@ const deck = document.querySelector('.deck');
 
 let cardArray = [...cards];
 
+let minutes = 0;
+
+let seconds = 0;
+
+let gameClock = setInterval(function() {
+  timer()
+},
+  1000);
+
+const minutesDiv = document.querySelector('.minutes');
+
+const secondsDiv = document.querySelector('.seconds');
+
 const resetButton = document.querySelector('.restart').addEventListener('click', function() {
   makeGrid();
 });
@@ -33,7 +46,7 @@ function shuffle(array) {
     return array;
 }
 
-function makeGrid () {
+function makeGrid() {
   shuffle(cardArray);
   for (let i = 0; i < cardArray.length; i++) {
   let newCardClass = cardArray[i];
@@ -41,7 +54,26 @@ function makeGrid () {
   }
 }
 
+function timer() {
+  if(minutes < 10) {
+    minutesDiv.innerText = '0' + minutes + ' Minutes';
+  }
+  else {
+    minutesDiv.innerText = minutes + 'Minutes';
+  }
+  if(seconds < 10) {
+    secondsDiv.innerText = '0' + seconds + ' Seconds';
+  }
+  else {
+    secondsDiv.innerText = seconds + ' Seconds';
+  }
+}
 
+seconds++;
+if(seconds == 60) {
+  minutes++;
+  seconds = 0;
+}
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
