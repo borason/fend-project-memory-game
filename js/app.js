@@ -42,6 +42,9 @@ const resetButton = document.querySelector('.restart').addEventListener('click',
   100
   );
   removeClasses();
+    for(let i = 0; i < cards.length; i++) {
+    cards[i].classList.remove('match');
+  };
 });
 
 /*
@@ -103,7 +106,9 @@ function removeClasses() {
 function matchCheck() {
   counter();
   if (faceUp.length === 2) {
-  console.log('matchcheck');
+    if(faceUp[0].querySelector('i').classList.value === faceUp[1].querySelector('i').classList.value) {
+      match();
+    }
   }
 }
 
@@ -136,9 +141,13 @@ function counter () {
   }
 }
 
-// function pairCheck () {
-//   if
-// }
+function match() {
+  pairedCards.push(faceUp);
+  faceUp.forEach(function (card) {
+    removeClasses();
+    card.classList.add('match');
+  });
+  }
 
 /*
  * set up the event listener for a card. If a card is clicked:
