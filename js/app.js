@@ -11,8 +11,12 @@ let minutes = 0;
 
 let seconds = 0;
 
+const faceUpCards = [];
+
+const matchedCards = [];
+
 let gameClock = setInterval(function() {
-  timer()
+  timer();
 },
   1000);
 
@@ -22,6 +26,11 @@ const secondsDiv = document.querySelector('.seconds');
 
 const resetButton = document.querySelector('.restart').addEventListener('click', function() {
   makeGrid();
+  setTimeout(function() {
+    seconds = 0;
+  },
+  100
+  );
 });
 
 /*
@@ -46,15 +55,28 @@ function shuffle(array) {
     return array;
 }
 
+function newGame() {
+  makeGrid();
+  timer();
+}
+
 function makeGrid() {
   shuffle(cardArray);
-  for (let i = 0; i < cardArray.length; i++) {
-  let newCardClass = cardArray[i];
-  deck.appendChild(newCardClass);
-  }
+  // for (let i = 0; i < cardArray.length; i++) {
+  // let newCardClass = cardArray[i];
+  // deck.appendChild(newCardClass);
+  // }
+  cardArray.forEach(function(card) {
+    deck.appendChild(card);
+  });
 }
 
 function timer() {
+  seconds++;
+  if(seconds == 60) {
+  minutes++;
+  seconds = 0;
+}
   if(minutes < 10) {
     minutesDiv.innerText = '0' + minutes + ' Minutes';
   }
@@ -69,11 +91,7 @@ function timer() {
   }
 }
 
-seconds++;
-if(seconds == 60) {
-  minutes++;
-  seconds = 0;
-}
+
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
