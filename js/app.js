@@ -20,6 +20,8 @@ let gameClock = setInterval(function() {
 },
   1000);
 
+const moves = document.getElementsByClassName('.moves');
+
 const minutesDiv = document.querySelector('.minutes');
 
 const secondsDiv = document.querySelector('.seconds');
@@ -58,7 +60,6 @@ function shuffle(array) {
 
 function newGame() {
   makeGrid();
-  timer();
 }
 
 function makeGrid() {
@@ -75,6 +76,7 @@ function makeGrid() {
 for(let i = 0; i < cards.length; i++) {
   card = cards[i];
   card.addEventListener('click', function() {
+
     this.classList.add('open');
     this.classList.add('show');
   });
@@ -100,6 +102,13 @@ function timer() {
   }
 }
 
+function movesCounter () {
+  moves++;
+  movesCounter.innerText = moves;
+  if (moves == 1) {
+    gameClock;
+  }
+}
 
 /*
  * set up the event listener for a card. If a card is clicked:
