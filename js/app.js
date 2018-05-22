@@ -13,9 +13,11 @@ let seconds = 0;
 
 let faceUp = [];
 
-const pairedCards = [];
+let pairedCards = [];
 
 const unmatchedPairs = [];
+
+// let modal = document.querySelector('#myModal');
 
 let moves = 0;
 
@@ -79,6 +81,7 @@ for (let i = 0; i < cards.length; i++) {
     this.classList.add('open', 'show');
     faceUp.push(this);
     matchCheck();
+    win();
     });
   };
 
@@ -153,13 +156,18 @@ function counter () {
 
 //function when two cards match
 function match() {
-  pairedCards.push(faceUp);
   faceUp.forEach(function (card) {
+    pairedCards.push(faceUp);
     unFlipCards();
     card.classList.add('match');
   });
   faceUp = [];
   }
+function win () {
+  if(pairedCards.length == 16) {
+    console.log('win');
+  }
+};
 
 window.onload = newGame();
 /*
