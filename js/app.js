@@ -55,6 +55,7 @@ function shuffle(array) {
     return array;
 }
 
+
 function newGame() {
   makeGrid();
   timer();
@@ -68,6 +69,14 @@ function makeGrid() {
   // }
   cardArray.forEach(function(card) {
     deck.appendChild(card);
+  });
+}
+
+for(let i = 0; i < cards.length; i++) {
+  card = cards[i];
+  card.addEventListener('click', function() {
+    this.classList.add('open');
+    this.classList.add('show');
   });
 }
 
