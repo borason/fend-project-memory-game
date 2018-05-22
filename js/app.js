@@ -22,7 +22,9 @@ let gameClock = setInterval(function() {
 },
   1000);
 
-const moves = document.getElementsByClassName('.moves');
+let moves = 0;
+
+let movesCounter = document.querySelector('.moves');
 
 const minutesDiv = document.querySelector('.minutes');
 
@@ -30,8 +32,12 @@ const secondsDiv = document.querySelector('.seconds');
 
 const resetButton = document.querySelector('.restart').addEventListener('click', function() {
   makeGrid();
+  moves = 0;
+  movesCounter.innerText = 0;
   setTimeout(function() {
     seconds = 0;
+    moves = 0;
+    movesDisplay = 0;
   },
   100
   );
@@ -68,6 +74,7 @@ function newGame() {
 
 function makeGrid() {
   shuffle(cardArray);
+  moves = 0;
   // for (let i = 0; i < cardArray.length; i++) {
   // let newCardClass = cardArray[i];
   // deck.appendChild(newCardClass);
@@ -76,14 +83,6 @@ function makeGrid() {
     deck.appendChild(card);
   });
 }
-
-  // for(let i = 0; i < cards.length; i++) {
-  //   card = cards[i];
-  //   card.addEventListener('click', function() {
-  //     this.classList.add('open', 'show');
-  //     faceUpCards.push(this);
-  //   });
-  // }
 
 for (let i = 0; i < cards.length; i++) {
   card = cards[i];
@@ -102,12 +101,13 @@ function removeClasses() {
 }
 
 function matchCheck() {
+  counter();
   if (faceUp.length === 2) {
   console.log('matchcheck');
   }
 }
 
-function timer() {
+const timer = function () {
   seconds++;
   if(seconds == 60) {
   minutes++;
@@ -125,9 +125,10 @@ function timer() {
   else {
     secondsDiv.innerText = seconds + ' Seconds';
   }
-}
+};
 
-function movesCounter () {
+function counter () {
+  console.log('counter');
   moves++;
   movesCounter.innerText = moves;
   if (moves == 1) {
