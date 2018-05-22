@@ -13,7 +13,9 @@ let seconds = 0;
 
 const faceUpCards = [];
 
-const matchedCards = [];
+const pairedCards = [];
+
+const unmatchedPairs = [];
 
 let gameClock = setInterval(function() {
   timer();
@@ -33,6 +35,7 @@ const resetButton = document.querySelector('.restart').addEventListener('click',
   },
   100
   );
+  removeClasses();
 });
 
 /*
@@ -60,6 +63,7 @@ function shuffle(array) {
 
 function newGame() {
   makeGrid();
+  addClasses();
 }
 
 function makeGrid() {
@@ -73,14 +77,20 @@ function makeGrid() {
   });
 }
 
-for(let i = 0; i < cards.length; i++) {
-  card = cards[i];
-  card.addEventListener('click', function() {
+  for(let i = 0; i < cards.length; i++) {
+    card = cards[i];
+    card.addEventListener('click', function() {
+      this.classList.add('open');
+      this.classList.add('show');
+    });
+  }
 
-    this.classList.add('open');
-    this.classList.add('show');
-  });
+function removeClasses() {
+  for(let i = 0; i < cards.length; i++) {
+    cards[i].classList.remove('open', 'show');
+  };
 }
+
 
 function timer() {
   seconds++;
@@ -110,6 +120,17 @@ function movesCounter () {
   }
 }
 
+function cardOpen () {
+  faceUpCards.push(this);
+  if (faceUpCards.length == 2) {
+    if (faceUpCards[0] == faceUpCards[1]) {
+      pairedCards.push(this);
+    }
+    else {
+      unmatchedPairs.push(this);
+    }
+  }
+}
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
