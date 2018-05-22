@@ -13,13 +13,15 @@ let seconds = 0;
 
 let faceUp = [];
 
+let moves = 0;
+
 let pairedCards = [];
 
 const unmatchedPairs = [];
 
-// let modal = document.querySelector('#myModal');
+let winTime = document.querySelector('#time');
 
-let moves = 0;
+let winMoves = document.querySelector('#moves');
 
 let movesCounter = document.querySelector('.moves');
 
@@ -30,6 +32,7 @@ const secondsDiv = document.querySelector('.seconds');
 const resetButton = document.querySelector('.restart').addEventListener('click', function() {
   makeGrid();
   moves = 0;
+  movesCounter.innerText = 0;
   minutesDiv.innerText = '';
   secondsDiv.innerText = '';
   stopClock();
@@ -146,9 +149,9 @@ function stopClock() {
   clearInterval(clock);
 }
 
-function counter () {
+function counter() {
   moves++;
-  movesCounter.innerText = Math.floor(moves / 2);
+  movesCounter.innerText = moves;
   if (moves == 1) {
     startClock();
   }
@@ -164,8 +167,10 @@ function match() {
   faceUp = [];
   }
 function win () {
-  if(pairedCards.length == 16) {
-    console.log('win');
+  if(pairedCards.length == 6) {
+    stopClock();
+    winMoves.innerText = moves;
+    $('#winModal').modal('show');
   }
 };
 
