@@ -167,9 +167,10 @@ function match() {
   faceUp = [];
   }
 function win () {
+    winMoves.innerText = moves;
+    winTime.innerText = `You finished in ${minutes} minutes and ${seconds} seconds!`
   if(pairedCards.length == 6) {
     stopClock();
-    winMoves.innerText = moves;
     $('#winModal').modal('show');
   }
 };
