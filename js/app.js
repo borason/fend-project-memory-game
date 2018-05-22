@@ -11,7 +11,7 @@ let minutes = 0;
 
 let seconds = 0;
 
-const faceUp = [];
+let faceUp = [];
 
 const pairedCards = [];
 
@@ -38,10 +38,11 @@ const resetButton = document.querySelector('.restart').addEventListener('click',
     seconds = 0;
     moves = 0;
     movesDisplay = 0;
+    timer();
   },
   100
   );
-  removeClasses();
+  unFlipCards();
     for(let i = 0; i < cards.length; i++) {
     cards[i].classList.remove('match');
   };
@@ -72,21 +73,17 @@ function shuffle(array) {
 
 function newGame() {
   makeGrid();
-  addClasses();
+  // addClasses();
 }
 
 function makeGrid() {
   shuffle(cardArray);
   moves = 0;
-  // for (let i = 0; i < cardArray.length; i++) {
-  // let newCardClass = cardArray[i];
-  // deck.appendChild(newCardClass);
-  // }
   cardArray.forEach(function(card) {
     deck.appendChild(card);
   });
 }
-
+//adds click listener and pushes to new array
 for (let i = 0; i < cards.length; i++) {
   card = cards[i];
   card.addEventListener('click', function () {
@@ -97,21 +94,36 @@ for (let i = 0; i < cards.length; i++) {
   };
 
 
-function removeClasses() {
+//general function to remove flipped cards classes
+function unFlipCards() {
   for(let i = 0; i < cards.length; i++) {
-    cards[i].classList.remove('open', 'show');
+    cards[i].classList.remove('open');
   };
 }
 
+//function to check whether cards match
 function matchCheck() {
   counter();
   if (faceUp.length === 2) {
     if(faceUp[0].querySelector('i').classList.value === faceUp[1].querySelector('i').classList.value) {
       match();
     }
+    else {
+      notMatched();
   }
 }
 
+function notMatched() {
+    setTimeout(function () {
+    unFlipCards();
+    },
+    500
+    )
+    faceUp = [];
+  }
+}
+
+//timer function that counds up
 const timer = function () {
   seconds++;
   if(seconds == 60) {
@@ -133,22 +145,24 @@ const timer = function () {
 };
 
 function counter () {
-  console.log('counter');
   moves++;
-  movesCounter.innerText = moves;
+  movesCounter.innerText = Math.floor(moves / 2);
   if (moves == 1) {
     gameClock;
   }
 }
 
+//function when two cards match
 function match() {
   pairedCards.push(faceUp);
   faceUp.forEach(function (card) {
-    removeClasses();
+    unFlipCards();
     card.classList.add('match');
   });
+  faceUp = [];
   }
 
+window.onload = newGame();
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
