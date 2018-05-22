@@ -17,11 +17,6 @@ const pairedCards = [];
 
 const unmatchedPairs = [];
 
-let gameClock = setInterval(function() {
-  timer();
-},
-  1000);
-
 let moves = 0;
 
 let movesCounter = document.querySelector('.moves');
@@ -33,15 +28,9 @@ const secondsDiv = document.querySelector('.seconds');
 const resetButton = document.querySelector('.restart').addEventListener('click', function() {
   makeGrid();
   moves = 0;
-  movesCounter.innerText = 0;
-  setTimeout(function() {
-    seconds = 0;
-    moves = 0;
-    movesDisplay = 0;
-    timer();
-  },
-  100
-  );
+  minutesDiv.innerText = '';
+  secondsDiv.innerText = '';
+  stopClock();
   unFlipCards();
     for(let i = 0; i < cards.length; i++) {
     cards[i].classList.remove('match');
@@ -123,8 +112,10 @@ function notMatched() {
   }
 }
 
+let clock;
 //timer function that counds up
-const timer = function () {
+function startClock () {
+  clock = setInterval(function() {
   seconds++;
   if(seconds == 60) {
   minutes++;
@@ -142,13 +133,21 @@ const timer = function () {
   else {
     secondsDiv.innerText = seconds + ' Seconds';
   }
+  },
+  1000
+  )
 };
+
+function stopClock() {
+  seconds = 0;
+  clearInterval(clock);
+}
 
 function counter () {
   moves++;
   movesCounter.innerText = Math.floor(moves / 2);
   if (moves == 1) {
-    gameClock;
+    startClock();
   }
 }
 
