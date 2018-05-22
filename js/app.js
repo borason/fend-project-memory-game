@@ -11,7 +11,7 @@ let minutes = 0;
 
 let seconds = 0;
 
-const faceUpCards = [];
+const faceUp = [];
 
 const pairedCards = [];
 
@@ -77,13 +77,23 @@ function makeGrid() {
   });
 }
 
-  for(let i = 0; i < cards.length; i++) {
-    card = cards[i];
-    card.addEventListener('click', function() {
-      this.classList.add('open');
-      this.classList.add('show');
+  // for(let i = 0; i < cards.length; i++) {
+  //   card = cards[i];
+  //   card.addEventListener('click', function() {
+  //     this.classList.add('open', 'show');
+  //     faceUpCards.push(this);
+  //   });
+  // }
+
+for (let i = 0; i < cards.length; i++) {
+  card = cards[i];
+  card.addEventListener('click', function () {
+    this.classList.add('open', 'show');
+    faceUp.push(this);
+    matchCheck();
     });
-  }
+  };
+
 
 function removeClasses() {
   for(let i = 0; i < cards.length; i++) {
@@ -91,6 +101,11 @@ function removeClasses() {
   };
 }
 
+function matchCheck() {
+  if (faceUp.length === 2) {
+  console.log('matchcheck');
+  }
+}
 
 function timer() {
   seconds++;
@@ -120,17 +135,10 @@ function movesCounter () {
   }
 }
 
-function cardOpen () {
-  faceUpCards.push(this);
-  if (faceUpCards.length == 2) {
-    if (faceUpCards[0] == faceUpCards[1]) {
-      pairedCards.push(this);
-    }
-    else {
-      unmatchedPairs.push(this);
-    }
-  }
-}
+// function pairCheck () {
+//   if
+// }
+
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
