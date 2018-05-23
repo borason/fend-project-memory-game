@@ -98,7 +98,7 @@ function makeGrid() {
 for (let i = 0; i < cards.length; i++) {
   card = cards[i];
   card.addEventListener('click', function () {
-    this.classList.add('open', 'show', 'lock',);
+    this.classList.add('open', 'show', 'lock');
     faceUp.push(this);
     matchCheck();
     starRating();
@@ -177,15 +177,15 @@ function counter() {
 function starRating() {
   if (moves > 1) {
     stars = 2
-    starList[2].style.opacity = "0.1";
+    starList[2].style.opacity = "0.3";
   }
   if (moves > 2) {
     stars = 1
-    starList[1].style.opacity = "0.1";
+    starList[1].style.opacity = "0.3";
   }
   if (moves > 3) {
     stars = 0
-    starList[0].style.opacity = "0.1";
+    starList[0].style.opacity = "0.3";
   }
 }
 

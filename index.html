@@ -10,6 +10,7 @@
 <!--     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda"> -->
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -20,7 +21,7 @@
 
     <div class="container">
         <header>
-            <h1>Matching Game</h1>
+            <h1 class="text-shadow-drop-center" id="title">Matching Game</h1>
         </header>
 
         <section class="score-panel">
@@ -102,7 +103,7 @@
   Launch demo modal
 </button>
 
-<div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal tracking-in-expand-fwd-bottom" id="winModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -118,8 +119,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id="replay">Play Again</button>
+        <button type="button" class="btn" id="close-button" data-dismiss="modal">Close</button>
+        <button type="button" class="btn" id="replay">Play Again</button>
       </div>
     </div>
   </div>
