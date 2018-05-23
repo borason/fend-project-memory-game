@@ -98,7 +98,7 @@ function makeGrid() {
 for (let i = 0; i < cards.length; i++) {
   card = cards[i];
   card.addEventListener('click', function () {
-    this.classList.add('open', 'show', 'lock');
+    this.classList.add('open', 'show', 'lock',);
     faceUp.push(this);
     matchCheck();
     starRating();
@@ -110,8 +110,7 @@ for (let i = 0; i < cards.length; i++) {
 //general function to remove flipped cards classes
 function unFlipCards() {
   for(let i = 0; i < cards.length; i++) {
-
-    cards[i].classList.remove('open', 'lock');
+    cards[i].classList.remove('open', 'lock', 'incorrect', 'show');
   };
 }
 
@@ -128,6 +127,10 @@ function matchCheck() {
 }
 
 function notMatched() {
+    faceUp.forEach(function (card) {
+    card.classList.add('incorrect');
+  });
+  faceUp = [];
     setTimeout(function () {
     unFlipCards();
     },
@@ -145,7 +148,7 @@ function startClock () {
   minutes++;
   seconds = 0;
 }
-  minutesDiv.innerText = `${minutes} Mins`;
+  minutesDiv.innerText = `${minutes} Min`;
   if(seconds < 10) {
     secondsDiv.innerText = ` 0${seconds} Secs`;
   }
