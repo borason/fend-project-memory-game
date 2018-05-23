@@ -110,6 +110,7 @@ for (let i = 0; i < cards.length; i++) {
 //general function to remove flipped cards classes
 function unFlipCards() {
   for(let i = 0; i < cards.length; i++) {
+
     cards[i].classList.remove('open', 'lock');
   };
 }
