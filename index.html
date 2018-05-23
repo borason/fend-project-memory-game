@@ -93,11 +93,6 @@
         </ul>
     </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#winModal">
-  Launch demo modal
-</button>
-
 <!-- Modal -->
 <div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -110,12 +105,12 @@
       </div>
       <div class="modal-body">
         <h1>Final Stats</h1>
-        <h1 id="time"></h1>
-        <h1 id="moves"></h1>
+        <h2 id="time"></h1>
+        <h2 id="moves"></h1>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="replay">Play Again</button>
       </div>
     </div>
   </div>
