@@ -56,13 +56,6 @@ function restart() {
   };
 };
 
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
-
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -81,7 +74,6 @@ function shuffle(array) {
 
 function newGame() {
   makeGrid();
-  // addClasses();
 }
 
 function makeGrid() {
@@ -167,6 +159,15 @@ function counter() {
   movesCounter.innerText = moves;
   if (moves == 1) {
     startClock();
+  }
+  if (moves > 32) {
+    document.getElementById('star-3').style.opacity = "0";
+  }
+  if (moves > 50) {
+    document.getElementById('star-2').style.opacity = "0";
+  }
+  if (moves > 70) {
+    document.getElementById('star-1').style.opacity = "0";
   }
 }
 
