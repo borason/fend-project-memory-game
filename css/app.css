@@ -115,7 +115,6 @@ h1 {
 }
 
 .score-panel .clock {
-/*    display: inline-block;*/
     display: flex;
     flex: 2;
 }

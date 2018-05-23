@@ -38,10 +38,12 @@ const resetButton = document.querySelector('.restart').addEventListener('click',
 });
 
 const winReset = document.querySelector('#replay').addEventListener('click', function() {
+  $('#winModal').modal('toggle');
   restart();
 });
 
 function restart() {
+  pairedCards = [];
   makeGrid();
   moves = 0;
   movesCounter.innerText = 0;
@@ -177,9 +179,10 @@ function match() {
   });
   faceUp = [];
   }
+
 function win () {
-    winMoves.innerText = `It took you ${moves} moves.`;
-    winTime.innerText = `You finished in ${minutes} minutes and ${seconds} seconds!`
+  winMoves.innerText = `It took you ${moves} moves.`;
+  winTime.innerText = `You finished in ${minutes} minutes and ${seconds} seconds!`
   if(pairedCards.length == 6) {
     stopClock();
     pairedCards = [];
