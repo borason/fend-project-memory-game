@@ -33,6 +33,16 @@ const minutesDiv = document.querySelector('.minutes');
 
 const secondsDiv = document.querySelector('.seconds');
 
+const star = document.querySelector('.stars');
+
+const starList = star.children;
+
+let starCopy = star.cloneNode(true);
+
+const starModal = document.querySelector('#star-rating');
+
+let stars = 3;
+
 const resetButton = document.querySelector('.restart').addEventListener('click', function() {
   restart();
 });
@@ -80,6 +90,7 @@ function makeGrid() {
   shuffle(cardArray);
   moves = 0;
   cardArray.forEach(function(card) {
+
     deck.appendChild(card);
   });
 }
@@ -87,9 +98,10 @@ function makeGrid() {
 for (let i = 0; i < cards.length; i++) {
   card = cards[i];
   card.addEventListener('click', function () {
-    this.classList.add('open', 'show');
+    this.classList.add('open', 'show', 'lock');
     faceUp.push(this);
     matchCheck();
+    starRating();
     win();
     });
   };
@@ -98,7 +110,7 @@ for (let i = 0; i < cards.length; i++) {
 //general function to remove flipped cards classes
 function unFlipCards() {
   for(let i = 0; i < cards.length; i++) {
-    cards[i].classList.remove('open');
+    cards[i].classList.remove('open', 'lock');
   };
 }
 
@@ -160,14 +172,21 @@ function counter() {
   if (moves == 1) {
     startClock();
   }
-  if (moves > 32) {
-    document.getElementById('star-3').style.opacity = "0";
+
+}
+
+function starRating() {
+  if (moves > 1) {
+    stars = 2
+    starList[2].style.opacity = "0.1";
   }
-  if (moves > 50) {
-    document.getElementById('star-2').style.opacity = "0";
+  if (moves > 2) {
+    stars = 1
+    starList[1].style.opacity = "0.1";
   }
-  if (moves > 70) {
-    document.getElementById('star-1').style.opacity = "0";
+  if (moves > 3) {
+    stars = 0
+    starList[0].style.opacity = "0.1";
   }
 }
 
@@ -182,8 +201,10 @@ function match() {
   }
 
 function win () {
+
   winMoves.innerText = `It took you ${moves} moves.`;
-  winTime.innerText = `You finished in ${minutes} minutes and ${seconds} seconds!`
+  winTime.innerText = `You finished in ${minutes} minutes and ${seconds} seconds!`;
+  starModal.appendChild(starCopy);
   if(pairedCards.length == 6) {
     stopClock();
     pairedCards = [];

@@ -23,11 +23,11 @@
 
         <section class="score-panel">
           <ul class="stars">
-            <li><i class="fa fa-star" id="star-1"></i></li>
-            <li><i class="fa fa-star" id="star-2"></i></li>
-            <li><i class="fa fa-star" id="star-3"></i></li>
-            <span class="moves">0</span> Moves
+            <li><i class="fa fa-star"></i></li>
+            <li><i class="fa fa-star"></i></li>
+            <li><i class="fa fa-star"></i></li>
           </ul>
+          <span class="moves">0</span> Moves
 
           <div class="clock">
             <div class="minutes">
@@ -41,56 +41,58 @@
           </div>
         </section>
 
+      <div class="container">
         <ul class="deck">
             <li class="card show">
-                <i class="fa fa-diamond"></i>
+                <i class="fa fa-diamond fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-paper-plane-o"></i>
+                <i class="fa fa-paper-plane-o fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-anchor"></i>
+                <i class="fa fa-anchor fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-bolt"></i>
+                <i class="fa fa-bolt fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-cube"></i>
+                <i class="fa fa-cube fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-anchor"></i>
+                <i class="fa fa-anchor fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-leaf"></i>
+                <i class="fa fa-leaf fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-bicycle"></i>
+                <i class="fa fa-bicycle fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-diamond"></i>
+                <i class="fa fa-diamond fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-bomb"></i>
+                <i class="fa fa-bomb fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-leaf"></i>
+                <i class="fa fa-leaf fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-bomb"></i>
+                <i class="fa fa-bomb fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-bolt"></i>
+                <i class="fa fa-bolt fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-bicycle"></i>
+                <i class="fa fa-bicycle fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-paper-plane-o"></i>
+                <i class="fa fa-paper-plane-o fa-2x"></i>
             </li>
             <li class="card show">
-                <i class="fa fa-cube"></i>
+                <i class="fa fa-cube fa-2x"></i>
             </li>
         </ul>
+      </div>
     </div>
 
 <!-- Modal -->
@@ -105,8 +107,10 @@
       </div>
       <div class="modal-body">
         <h1>Final Stats</h1>
-        <h2 id="time"></h1>
-        <h2 id="moves"></h1>
+        <h6 id="time"></h6>
+        <h6 id="moves"></h6>
+        <div id='star-rating'>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
