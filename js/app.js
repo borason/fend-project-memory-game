@@ -144,17 +144,12 @@ function startClock () {
   minutes++;
   seconds = 0;
 }
-  if(minutes < 10) {
-    minutesDiv.innerText = '0' + minutes + ' Minutes';
-  }
-  else {
-    minutesDiv.innerText = minutes + 'Minutes';
-  }
+  minutesDiv.innerText = `${minutes} Mins`;
   if(seconds < 10) {
-    secondsDiv.innerText = '0' + seconds + ' Seconds';
+    secondsDiv.innerText = ` 0${seconds} Secs`;
   }
   else {
-    secondsDiv.innerText = seconds + ' Seconds';
+    secondsDiv.innerText = `${seconds} Secs`;
   }
   },
   1000
