@@ -37,8 +37,6 @@ const star = document.querySelector('.stars');
 
 const starList = star.children;
 
-let starCopy = star.cloneNode(true);
-
 const starModal = document.querySelector('#star-rating');
 
 let stars = 3;
@@ -53,6 +51,9 @@ const winReset = document.querySelector('#replay').addEventListener('click', fun
 });
 
 function restart() {
+  starList[0].style.opacity = 1.0;
+  starList[1].style.opacity = 1.0;
+  starList[2].style.opacity = 1.0;
   pairedCards = [];
   makeGrid();
   moves = 0;
@@ -203,8 +204,9 @@ function win () {
 
   winMoves.innerText = `It took you ${moves} moves.`;
   winTime.innerText = `You finished in ${minutes} minutes and ${seconds} seconds!`;
-  starModal.appendChild(starCopy);
   if(pairedCards.length == 6) {
+    let starCopy = star.cloneNode(true);
+    starModal.appendChild(starCopy);
     stopClock();
     pairedCards = [];
     $('#winModal').modal('show');
