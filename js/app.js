@@ -204,7 +204,7 @@ function win () {
 
   winMoves.innerText = `It took you ${moves} moves.`;
   winTime.innerText = `You finished in ${minutes} minutes and ${seconds} seconds!`;
-  if(pairedCards.length == 2) {
+  if(pairedCards.length == 4) {
     let starCopy = star.cloneNode(true);
     starModal.appendChild(starCopy);
     stopClock();
