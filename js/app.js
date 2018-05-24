@@ -41,6 +41,8 @@ const starModal = document.querySelector('#star-rating');
 
 let stars = 3;
 
+const winMessage = document.querySelector('#win-message');
+
 const resetButton = document.querySelector('.restart').addEventListener('click', function() {
   restart();
 });
@@ -54,6 +56,7 @@ function restart() {
   starList[0].style.opacity = 1.0;
   starList[1].style.opacity = 1.0;
   starList[2].style.opacity = 1.0;
+  stars = 3;
   pairedCards = [];
   makeGrid();
   moves = 0;
@@ -176,17 +179,20 @@ function counter() {
 }
 
 function starRating() {
-  if (moves > 1) {
-    stars = 2
-    starList[2].style.opacity = "0.2";
+  if (moves > 50) {
+    stars = 0;
+    starList[0].style.opacity = "0.2";
   }
-  if (moves > 2) {
-    stars = 1
+  if (moves > 40) {
+    stars = 1;
     starList[1].style.opacity = "0.2";
   }
-  if (moves > 3) {
-    stars = 0
-    starList[0].style.opacity = "0.2";
+  if (moves > 30) {
+    stars = 2;
+    starList[2].style.opacity = "0.2";
+  }
+  if (moves <= 30) {
+    stars = 3;
   }
 }
 
@@ -208,10 +214,27 @@ function win () {
     let starCopy = star.cloneNode(true);
     starModal.appendChild(starCopy);
     stopClock();
+    endMessage();
     pairedCards = [];
     $('#winModal').modal('show');
   }
 };
+
+function endMessage () {
+  if (stars == 3) {
+    winMessage.innerText = 'Amazing! You got a perfect score.';
+  }
+  else if (stars == 2) {
+    winMessage.innerText = 'Pretty good, but you can do better.';
+  }
+  else if (stars == 1) {
+    winMessage.innerText = 'Not bad. You should try to focus a little more.';
+  }
+  else {
+    winMessage.innerText = 'What happened? Are you randomly clicking on the game board?';
+  }
+}
+
 
 window.onload = newGame();
 /*
