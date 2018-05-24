@@ -18,17 +18,18 @@ body {
 }
 
 body {
-background-color: #d1cdb3 !important;
-background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+  background-color: rgba(92, 128, 126, 0.8) !important;
+  /*background-color: #5c807e !important;*/
+  background-image: url("https://www.transparenttextures.com/patterns/old-map.png");
 /*    background: #db9914 url('../img/arches.png');*/ /* Background pattern from Subtle Patterns */
     font-family: 'Pacifico', cursive !important;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
 }
 
 h1 {
@@ -42,8 +43,8 @@ h1 {
  */
 
 .deck {
-    width: 660px;
-    min-height: 680px;
+    width: 80%;
+    height: 80%;
 /*    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);*/
     background: background-color: #574a54;
     background-image: url("https://www.transparenttextures.com/patterns/black-orchid.png");
@@ -52,7 +53,7 @@ h1 {
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: 0 0 3em;
 }
@@ -171,16 +172,16 @@ h1 {
 }
 
 .modal-content {
-background-color: #E4E9EB !important;
-background-image: url("https://www.transparenttextures.com/patterns/fancy-deboss.png");
+background-color: #d1cdb3 !important;
+background-image: url("https://www.transparenttextures.com/patterns/arches.png");
   font-family: 'Gentium Basic', serif;
   text-align: center;
-  color: black !important;
+  color: white !important;
 }
 
 #star-rating {
   justify-content: center;
-  padding-left: 42%;
+  padding-left: 44.3%;
 }
 
 .modal-header {
@@ -486,3 +487,50 @@ background-image: url("https://www.transparenttextures.com/patterns/fancy-deboss
   -webkit-animation: tracking-in-expand-fwd-bottom 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
           animation: tracking-in-expand-fwd-bottom 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
+
+@media screen and (max-width: 320px) {
+  .deck {
+    width: 100%;
+  }
+
+  .deck .card {
+    height: 4.7rem;
+    width: 4.7rem;
+    margin: 10px 0px 10px 0px;
+  }
+}
+  .score-panel {
+    width: 70%;
+    display: flex-wrap;
+  }
+
+/*  body {
+    height: 660px;
+  }
+
+  header {
+    font-size: 1rem !important;
+    width: 100%;
+  }*/
+
+@media screen and (min-width: 321px) and (max-width: 899px) {
+  .deck .card {
+    margin-bottom: 20px;
+  }
+}
+/* For Tablets and larger screens */
+
+@media screen and (min-width: 900px) {
+  .container {
+    font-size: 22px;
+  }
+
+  .deck {
+    width: 660px;
+    height: 680px;
+  }
+
+  .deck .card {
+    height: 125px;
+    width: 125px;
+  }

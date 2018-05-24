@@ -178,15 +178,15 @@ function counter() {
 function starRating() {
   if (moves > 1) {
     stars = 2
-    starList[2].style.opacity = "0.3";
+    starList[2].style.opacity = "0.2";
   }
   if (moves > 2) {
     stars = 1
-    starList[1].style.opacity = "0.3";
+    starList[1].style.opacity = "0.2";
   }
   if (moves > 3) {
     stars = 0
-    starList[0].style.opacity = "0.3";
+    starList[0].style.opacity = "0.2";
   }
 }
 
@@ -204,7 +204,7 @@ function win () {
 
   winMoves.innerText = `It took you ${moves} moves.`;
   winTime.innerText = `You finished in ${minutes} minutes and ${seconds} seconds!`;
-  if(pairedCards.length == 6) {
+  if(pairedCards.length == 2) {
     let starCopy = star.cloneNode(true);
     starModal.appendChild(starCopy);
     stopClock();
