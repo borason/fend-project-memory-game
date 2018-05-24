@@ -17,6 +17,10 @@ body {
     color: white !important;
 }
 
+header {
+  margin-bottom: 10px;
+}
+
 body {
   background-color: rgba(92, 128, 126, 0.8) !important;
   /*background-color: #5c807e !important;*/
@@ -38,11 +42,15 @@ h1 {
     font-size: 3rem !important;
 }
 
-button:hover {
-  padding-right: 20px !important;
-  /*box-shadow: 4px 4px 1px black !important;*/
+.btn {
+  position: relative;
 }
 
+.btn:hover,
+.btn-lg:hover {
+  padding-right: 20px !important;
+  position: relative;
+}
 
 /*
  * Styles for the deck of cards
@@ -103,7 +111,7 @@ background-image: url("https://www.transparenttextures.com/patterns/gray-lines.p
     cursor: default;
     background: #ef5007;
     font-size: 33px;
-    animation: shadow-pop-tl-reverse 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) reverse both;
+    animation: shadow-pop-tl-reverse 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) reverse both;
 }
 
 /*
@@ -112,8 +120,8 @@ background-image: url("https://www.transparenttextures.com/patterns/gray-lines.p
 
 .score-panel {
     text-align: center;
-    width: 50%;
-    margin: 10px 0 10px 0;
+    width: 60%;
+    margin: 0px 0 10px 0;
 /*    margin-bottom: 10px;*/
     display: flex;
     flex-direction: row;
@@ -155,10 +163,12 @@ background-image: url("https://www.transparenttextures.com/patterns/gray-lines.p
 
 .minutes {
   padding: 0px 1px 0 1px;
+  display: inline;
 }
 
 .seconds {
   padding: 0px 5px 0 5px;
+  display: inline;
 }
 
 .fa-star {
@@ -170,10 +180,14 @@ background-image: url("https://www.transparenttextures.com/patterns/gray-lines.p
   pointer-events: none;
 }
 
+
+
 .fa-repeat {
   float: right;
-  vertical-align: -30% !important;
-  bottom: 10px;
+  line-height: normal;
+/*  vertical-align: 30% !important;
+  top: 10px;*/
+  /*bottom: 10px;*/
 }
 
 .moves {
@@ -181,8 +195,8 @@ background-image: url("https://www.transparenttextures.com/patterns/gray-lines.p
 }
 
 .modal-content {
-background-color: #d1cdb3 !important;
-background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+background-color: #8bbfbf !important;
+background-image: url("https://www.transparenttextures.com/patterns/escheresque-dark.png");
   font-family: 'Gentium Basic', serif;
   text-align: center;
   color: white !important;
@@ -571,7 +585,7 @@ background-image: url("https://www.transparenttextures.com/patterns/arches.png")
   }
 }
   .score-panel {
-    width: 50%;
+    width: 60%;
   }
 /* For Tablets and larger screens */
 
@@ -591,5 +605,5 @@ background-image: url("https://www.transparenttextures.com/patterns/arches.png")
   }
 
   .score-panel {
-    width: 50%;
+    width: 60%;
   }

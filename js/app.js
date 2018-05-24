@@ -17,6 +17,8 @@ let moves = 0;
 
 let clock;
 
+const clockDiv = document.querySelector('.clock');
+
 let pairedCards = [];
 
 const replay = document.querySelector('#replay');
@@ -63,6 +65,7 @@ function restart() {
   movesCounter.innerText = 0;
   minutesDiv.innerText = '';
   secondsDiv.innerText = '';
+  // clockDiv.style.display = 'none';
   stopClock();
   unFlipCards();
     for(let i = 0; i < cards.length; i++) {
@@ -138,7 +141,7 @@ function notMatched() {
     setTimeout(function () {
     unFlipCards();
     },
-    500
+    200
     )
     faceUp = [];
   }
@@ -151,6 +154,7 @@ function startClock () {
   if(seconds == 60) {
   minutes++;
   seconds = 0;
+  // clockDiv.style.display = 'inline-flex';
 }
   minutesDiv.innerText = `${minutes} Min`;
   if(seconds < 10) {
