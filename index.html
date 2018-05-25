@@ -7,7 +7,6 @@
     <meta name="description" content="">
 
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-<!--     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda"> -->
     <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
@@ -22,7 +21,6 @@
     <div class="container">
         <header>
             <h1 class="text-shadow-drop-center" id="title">Matching Game</h1>
-<!--             <p>press 'r' key to restart</p> -->
         </header>
 
         <section class="score-panel">
@@ -31,12 +29,15 @@
             <li><i class="fa fa-star"></i></li>
             <li><i class="fa fa-star"></i></li>
           </ul>
-          <span class="moves">0</span> Moves
+          <span class="moves">0</span>
+          <span class="moves-text">Moves</span>
 
           <div class="clock">
-            <div class="minutes">
+            <div>
+              <h4><span class="minutes">0</span>Mins</h4>
             </div>
-            <div class="seconds">
+            <div>
+              <h4><span class="seconds">0</span>Secs</h4>
             </div>
           </div>
 
@@ -100,9 +101,6 @@
     </div>
 
 <!-- Modal -->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#winModal">
-  Launch demo modal
-</button> -->
 
 <div class="modal tracking-in-expand-fwd-bottom" id="winModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">

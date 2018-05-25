@@ -17,6 +17,10 @@ body {
     color: white !important;
 }
 
+h4 {
+  line-height: normal;
+}
+
 header {
   margin-bottom: 10px;
 }
@@ -27,6 +31,10 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/old-map.png");
 /*    background: #db9914 url('../img/arches.png');*/ /* Background pattern from Subtle Patterns */
     font-family: 'Pacifico', cursive !important;
+}
+
+.seconds {
+  margin-left: 10px;
 }
 
 .container {
@@ -43,13 +51,13 @@ h1 {
 }
 
 .btn {
-  position: relative;
+    position: relative;
 }
 
 .btn:hover,
 .btn-lg:hover {
-  padding-right: 20px !important;
-  position: relative;
+    padding-right: 20px !important;
+    position: relative;
 }
 
 /*
@@ -59,9 +67,8 @@ h1 {
 .deck {
     width: 80%;
     height: 80%;
-/*    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);*/
-background-color: #999099;
-background-image: url("https://www.transparenttextures.com/patterns/green-cup.png");
+    background-color: #999099;
+    background-image: url("../img/green-cup.png"); /* Downloaded from "https://www.transparenttextures.com/patterns/green-cup.png" */
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 5px 0 rgba(46, 61, 73, 0.5);
@@ -75,9 +82,8 @@ background-image: url("https://www.transparenttextures.com/patterns/green-cup.pn
 .deck .card {
     height: 125px;
     width: 125px;
-/*    background: #2e3d49;*/
-background-color: #0a0a09;
-background-image: url("https://www.transparenttextures.com/patterns/gray-lines.png");
+    background-color: #0a0a09;
+    background-image: url("../img/gray-lines.png"); /* Downloaded from "https://www.transparenttextures.com/patterns/gray-lines.png" */
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
@@ -90,7 +96,6 @@ background-image: url("https://www.transparenttextures.com/patterns/gray-lines.p
 
 .deck .card.open {
     animation: shadow-pop-tl-forward 0.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-/*    transform: rotateY(0);*/
     background: #02b3e4;
     cursor: default;
 }
@@ -122,13 +127,13 @@ background-image: url("https://www.transparenttextures.com/patterns/gray-lines.p
     text-align: center;
     width: 60%;
     margin: 0px 0 10px 0;
-/*    margin-bottom: 10px;*/
     display: flex;
     flex-direction: row;
     padding: 0px 10px 0px 10px;
     justify-content: center;
     font-size: 1.5rem;
     text-shadow: 4px 4px 2px #000000 !important;
+    flex-wrap: wrap;
 }
 
 .stars {
@@ -138,6 +143,12 @@ background-image: url("https://www.transparenttextures.com/patterns/gray-lines.p
     margin: 0 5px 0 0;
     display: flex;
     flex: 1;
+    line-height: normal;
+}
+
+.moves,
+.moves-text {
+    line-height: normal;
 }
 
 .stars li {
@@ -152,6 +163,9 @@ background-image: url("https://www.transparenttextures.com/patterns/gray-lines.p
     flex: 3;
     width: 50px;
     flex-grow: 0 !important;
+    line-height: normal;
+    position: relative;
+    top: 5px;
 }
 
 .score-panel .clock {
@@ -159,76 +173,78 @@ background-image: url("https://www.transparenttextures.com/patterns/gray-lines.p
     flex: 2;
     padding: 0px 0px 0 50px;
     margin-left: 10px;
+    line-height: normal !important;
 }
 
 .minutes {
-  padding: 0px 1px 0 1px;
-  display: inline;
+    padding: 0px 1px 0 1px;
+    display: inline;
+    margin-right: 5px;
+    line-height: normal;
 }
 
 .seconds {
-  padding: 0px 5px 0 5px;
-  display: inline;
+    padding: 0px 5px 0 5px;
+    display: inline;
+    margin-right: 5px;
+    line-height: normal;
 }
 
 .fa-star {
-  stroke: black;
-  stroke-width: 50;
+    stroke: black;
+    stroke-width: 50px;
 }
 
 .lock {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 
 
 .fa-repeat {
-  float: right;
-  line-height: normal;
-/*  vertical-align: 30% !important;
-  top: 10px;*/
-  /*bottom: 10px;*/
+    float: right;
+    line-height: normal;
 }
 
 .moves {
-  padding-right: 10px;
+    padding-right: 10px;
 }
 
 .modal-content {
-background-color: #8bbfbf !important;
-background-image: url("https://www.transparenttextures.com/patterns/escheresque-dark.png");
-  font-family: 'Gentium Basic', serif;
-  text-align: center;
-  color: white !important;
-  text-shadow: 2px 2px 1px #000000;
+    background-color: #8bbfbf !important;
+    background-image: url("../img/escheresque-dark.png"); /* Downloaded from "https://www.transparenttextures.com/patterns/escheresque-dark.png" */
+    font-family: 'Gentium Basic', serif;
+    text-align: center;
+    color: white !important;
+    text-shadow: 2px 2px 1px #000000;
 }
 
 #star-rating {
-  justify-content: center;
-  padding-left: 44.3%;
+    justify-content: center;
+    padding-left: 44.3%;
 }
 
 .modal-header {
-  text-align: center;
+    text-align: center;
 }
 
 .modal-footer {
-  align-items: center !important;
-  justify-content: center !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 #close-button {
-  background-color: #ef5007 !important;
-  color: white !important;
-  align-items: center !important;
-  box-shadow: 2px 2px 1px black !important;
+    background-color: #ef5007 !important;
+    color: white !important;
+    align-items: center !important;
+    box-shadow: 2px 2px 1px black !important;
 }
 
 #replay {
-  background-color: #02ccba;
-  color: white !important;
-  align-items: center !important;
-  box-shadow: 2px 2px 1px black !important;
+    background-color: #02ccba;
+    color: white !important;
+    align-items: center !impor]tant;
+    box-shadow: 2px 2px 1px black !important;
 }
 
 /*Keyframe Animations*/
@@ -570,6 +586,16 @@ background-image: url("https://www.transparenttextures.com/patterns/escheresque-
     display: flex-wrap;
   }
 
+  .score-panel .clock {
+    margin-left: 0px;
+    margin-right: 5px;
+    padding-left: 10px;
+  }
+
+    .score-panel .restart {
+    margin-left: 5px;
+  }
+
 /*  body {
     height: 660px;
   }
@@ -585,7 +611,17 @@ background-image: url("https://www.transparenttextures.com/patterns/escheresque-
   }
 }
   .score-panel {
-    width: 60%;
+    width: 70%;
+  }
+
+  .score-panel .clock {
+    margin-left: 0px;
+    margin-right: 5px;
+    padding-left: 10px;
+  }
+
+  .score-panel .restart {
+    margin-left: 5px;
   }
 /* For Tablets and larger screens */
 

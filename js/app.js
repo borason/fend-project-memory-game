@@ -60,6 +60,10 @@ const winReset = document.querySelector('#replay').addEventListener('click', fun
 
 // Restarts the game
 function restart() {
+  minutes = 0;
+  seconds = 0;
+  // Initializes game over message
+  winMessage.innerText = '';
   // Initializes star rating
   starList[0].style.opacity = 1.0;
   starList[1].style.opacity = 1.0;
@@ -165,12 +169,12 @@ function startClock () {
   seconds = 0;
   }
   // Adds text to clock display
-  minutesDiv.innerText = `${minutes} Min`;
+  minutesDiv.innerText = `${minutes}`;
   if(seconds < 10) {
-    secondsDiv.innerText = ` 0${seconds} Secs`;
+    secondsDiv.innerText = ` 0${seconds}`;
   }
   else {
-    secondsDiv.innerText = `${seconds} Secs`;
+    secondsDiv.innerText = `${seconds}`;
   }
   },
   1000
@@ -229,12 +233,12 @@ function match() {
 
 // Runs to determine if game is over
 function win () {
-  if(pairedCards.length == 16) {
-    // Stops clock
-    stopClock();
+  if(pairedCards.length == 4) {
     // Assigns content to modal
     winMoves.innerText = `It took you ${moves} moves.`;
     winTime.innerText = `You finished in ${minutes} minutes and ${seconds} seconds!`;
+    // Stops clock
+    stopClock();
     // Takes star rating and appends it to the modal
     let starCopy = star.cloneNode(true);
     let newStar = starModal.appendChild(starCopy);
@@ -252,13 +256,13 @@ function endMessage () {
   if (stars == 3) {
     winMessage.innerText = 'Amazing! You got highest rating.';
   }
-  else if (stars == 2) {
+  if (stars == 2) {
     winMessage.innerText = 'Pretty good, but you can do better.';
   }
-  else if (stars == 1) {
+  if (stars == 1) {
     winMessage.innerText = 'Not bad. You should try to focus a little more.';
   }
-  else {
+  if (stars == 0) {
     winMessage.innerText = 'What happened? Are you randomly clicking on the game board?';
   }
 }
