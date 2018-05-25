@@ -48,6 +48,7 @@ const starModal = document.querySelector('#star-rating');
 
 const winMessage = document.querySelector('#win-message');
 
+// Event listeners for restart button and modal restart button
 const resetButton = document.querySelector('.restart').addEventListener('click', function() {
   restart();
 });
@@ -57,25 +58,30 @@ const winReset = document.querySelector('#replay').addEventListener('click', fun
   restart();
 });
 
+// Restarts the game
 function restart() {
+  // Initializes star rating
   starList[0].style.opacity = 1.0;
   starList[1].style.opacity = 1.0;
   starList[2].style.opacity = 1.0;
   stars = 3;
-  pairedCards = [];
-  makeGrid();
+  // Initializes move counter
   moves = 0;
   movesCounter.innerText = 0;
+  // Stops clock and initializes game clock display
+  stopClock();
   minutesDiv.innerText = '';
   secondsDiv.innerText = '';
-  // clockDiv.style.display = 'none';
-  stopClock();
-  unFlipCards();
+  // Empties all matched cards
+  pairedCards = [];
   cardArray.forEach(function(card) {
   card.classList.remove('match');
   });
+  // Flips all cards back over
+  unFlipCards();
+  // Shuffles deck
+  makeGrid();
 };
-
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -92,6 +98,7 @@ function shuffle(array) {
     return array;
 }
 
+// Shuffles cards and adds to deck
 function makeGrid() {
   shuffle(cardArray);
   moves = 0;
@@ -100,9 +107,10 @@ function makeGrid() {
   });
 }
 
-//adds click listener and pushes to new array
+// Adds click listener to each card
 let click = cardArray.forEach(function(card) {
   card.addEventListener('click', function () {
+    // Flips card, shows icon and locks it open
     this.classList.add('open', 'show', 'lock');
     faceUp.push(this);
     matchCheck();
