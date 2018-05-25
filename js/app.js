@@ -110,7 +110,7 @@ function makeGrid() {
 // Adds click listener to each card
 let click = cardArray.forEach(function(card) {
   card.addEventListener('click', function () {
-    // Flips card, shows icon and locks it open
+    // Flips card, shows icon and disables user from clicking same card again
     this.classList.add('open', 'show', 'lock');
     faceUp.push(this);
     matchCheck();
@@ -221,11 +221,13 @@ function win () {
   winTime.innerText = `You finished in ${minutes} minutes and ${seconds} seconds!`;
   if(pairedCards.length == 4) {
     let starCopy = star.cloneNode(true);
-    starModal.appendChild(starCopy);
+    let newStar = starModal.appendChild(starCopy);
+    let modalStarRating = starModal.children;
     stopClock();
     endMessage();
     pairedCards = [];
     $('#winModal').modal('show');
+    starModal.firstChild.remove();
   }
 };
 
