@@ -196,11 +196,11 @@ function counter() {
 // Evaluates whether to lower star rating based on number of moves
 // Assigns value to stars variable in order to determine game over message
 function starRating() {
-  if (moves > 50) {
+  if (moves > 70) {
     stars = 0;
     starList[0].style.opacity = "0.2";
   }
-  if (moves > 40) {
+  if (moves > 50) {
     stars = 1;
     starList[1].style.opacity = "0.2";
   }
@@ -229,7 +229,7 @@ function match() {
 
 // Runs to determine if game is over
 function win () {
-  if(pairedCards.length == 4) {
+  if(pairedCards.length == 16) {
     // Stops clock
     stopClock();
     // Assigns content to modal
