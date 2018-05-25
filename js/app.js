@@ -120,14 +120,14 @@ let click = cardArray.forEach(function(card) {
 });
 
 
-//general function to remove flipped cards classes
+// Removes classes from cards that are flipped back over
 function unFlipCards() {
-  for(let i = 0; i < cards.length; i++) {
-    cards[i].classList.remove('open', 'lock', 'incorrect', 'show');
-  };
+  cardArray.forEach(function(card) {
+    card.classList.remove('open', 'lock', 'incorrect', 'show');
+  });
 }
 
-//function to check whether cards match
+// Checks whether two clicked cards match
 function matchCheck() {
   counter();
   if (faceUp.length === 2) {
@@ -139,28 +139,32 @@ function matchCheck() {
   }
 }
 
+// Runs when cards do not match
 function notMatched() {
     faceUp.forEach(function (card) {
+    // Adds incorrect class that runs css animation
     card.classList.add('incorrect');
   });
+    // Adds slight delay to allow css animation to run before flipping cards back over
     setTimeout(function () {
     unFlipCards();
     },
     200
     )
+    // Empties match evaluation array
     faceUp = [];
   }
 }
 
-//timer function that counds up
+// Timer function that counts up
 function startClock () {
   clock = setInterval(function() {
   seconds++;
   if(seconds == 60) {
   minutes++;
   seconds = 0;
-  // clockDiv.style.display = 'inline-flex';
-}
+  }
+  // Adds text to clock display
   minutesDiv.innerText = `${minutes} Min`;
   if(seconds < 10) {
     secondsDiv.innerText = ` 0${seconds} Secs`;
@@ -173,20 +177,24 @@ function startClock () {
   )
 };
 
+// Stops clock and initializes clock display
 function stopClock() {
   seconds = 0;
+  minutes = 0;
   clearInterval(clock);
 }
 
+// Increments move counter and starts clock after first card click
 function counter() {
   moves++;
   movesCounter.innerText = moves;
   if (moves == 1) {
     startClock();
   }
-
 }
 
+// Evaluates whether to lower star rating based on number of moves
+// Assigns value to stars variable in order to determine game over message
 function starRating() {
   if (moves > 50) {
     stars = 0;
@@ -205,35 +213,44 @@ function starRating() {
   }
 }
 
-//function when two cards match
+// Runs when two cards match
 function match() {
   faceUp.forEach(function (card) {
+    // Pushes both cards to matched cards array
     pairedCards.push(faceUp);
+    // Removes previous styling
     unFlipCards();
+    // Adds class that runns css animation
     card.classList.add('match');
   });
+  // Initializes match evaluation array
   faceUp = [];
   }
 
+// Runs to determine if game is over
 function win () {
-
-  winMoves.innerText = `It took you ${moves} moves.`;
-  winTime.innerText = `You finished in ${minutes} minutes and ${seconds} seconds!`;
   if(pairedCards.length == 4) {
+    // Stops clock
+    stopClock();
+    // Assigns content to modal
+    winMoves.innerText = `It took you ${moves} moves.`;
+    winTime.innerText = `You finished in ${minutes} minutes and ${seconds} seconds!`;
+    // Takes star rating and appends it to the modal
     let starCopy = star.cloneNode(true);
     let newStar = starModal.appendChild(starCopy);
     let modalStarRating = starModal.children;
-    stopClock();
+    // Returns game over message
     endMessage();
-    pairedCards = [];
+    // pairedCards = [];
     $('#winModal').modal('show');
     starModal.firstChild.remove();
   }
 };
 
+// Evaluates final star rating to determine game over message
 function endMessage () {
   if (stars == 3) {
-    winMessage.innerText = 'Amazing! You got a perfect score.';
+    winMessage.innerText = 'Amazing! You got highest rating.';
   }
   else if (stars == 2) {
     winMessage.innerText = 'Pretty good, but you can do better.';
