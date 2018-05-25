@@ -1,47 +1,50 @@
-/*
- * Create a list that holds all of your cards
- */
+// Variables for individual cards and card deck
 let cards = document.getElementsByClassName('card');
 
 const deck = document.querySelector('.deck');
 
 let cardArray = [...cards];
 
+// Variables for game clock
 let minutes = 0;
 
 let seconds = 0;
-
-let faceUp = [];
-
-let moves = 0;
 
 let clock;
 
 const clockDiv = document.querySelector('.clock');
 
-let pairedCards = [];
-
-const replay = document.querySelector('#replay');
-
-const unmatchedPairs = [];
-
 let winTime = document.querySelector('#time');
 
 let winMoves = document.querySelector('#moves');
-
-let movesCounter = document.querySelector('.moves');
 
 const minutesDiv = document.querySelector('.minutes');
 
 const secondsDiv = document.querySelector('.seconds');
 
+// Variables to initialize arrays
+const unmatchedPairs = [];
+
+let faceUp = [];
+
+let pairedCards = [];
+
+// Variables for move counter
+let moves = 0;
+
+let movesCounter = document.querySelector('.moves');
+
+const replay = document.querySelector('#replay');
+
+// Variables for star rating
+let stars = 3;
+
 const star = document.querySelector('.stars');
 
 const starList = star.children;
 
+// Modal related variables
 const starModal = document.querySelector('#star-rating');
-
-let stars = 3;
 
 const winMessage = document.querySelector('#win-message');
 
@@ -68,10 +71,11 @@ function restart() {
   // clockDiv.style.display = 'none';
   stopClock();
   unFlipCards();
-    for(let i = 0; i < cards.length; i++) {
-    cards[i].classList.remove('match');
-  };
+  cardArray.forEach(function(card) {
+  card.classList.remove('match');
+  });
 };
+
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -88,30 +92,24 @@ function shuffle(array) {
     return array;
 }
 
-
-function newGame() {
-  makeGrid();
-}
-
 function makeGrid() {
   shuffle(cardArray);
   moves = 0;
   cardArray.forEach(function(card) {
-
     deck.appendChild(card);
   });
 }
+
 //adds click listener and pushes to new array
-for (let i = 0; i < cards.length; i++) {
-  card = cards[i];
+let click = cardArray.forEach(function(card) {
   card.addEventListener('click', function () {
     this.classList.add('open', 'show', 'lock');
     faceUp.push(this);
     matchCheck();
     starRating();
     win();
-    });
-  };
+  });
+});
 
 
 //general function to remove flipped cards classes
@@ -137,7 +135,6 @@ function notMatched() {
     faceUp.forEach(function (card) {
     card.classList.add('incorrect');
   });
-  faceUp = [];
     setTimeout(function () {
     unFlipCards();
     },
@@ -240,7 +237,7 @@ function endMessage () {
 }
 
 
-window.onload = newGame();
+window.onload = restart();
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
