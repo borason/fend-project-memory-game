@@ -34,10 +34,10 @@ For more information about the Udacity Front End Nano Degree, please visit the [
     Click on two face down cards.\
     If the cards match, then the cards will remain face up.\
     If they do not match, the cards will flip back over.\
-    The game ends when all cards are matched (face up).\
-    To restart the game press the
+    The game ends when all cards are matched(face up).\
+    To restart the game, press the
     ![redo icon - downloaded from https://use.fontawesome.com/releases/v5.0.13/svgs/solid/redo.svg](/img/redo-icon.png) button.\
-    The game keeps your time after the first click.\
+    The game clock stars after the first click.\
     The final rating is based on the number of moves made. Each click counts as one move.
 
 
