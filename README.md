@@ -9,17 +9,34 @@
 ## About
 
 
-This game is a part of the Udacity Front End Nano Degree. The project was created based off a fork from the starter code provided by the [Udacity Github.](https://github.com/udacity/fend-project-memory-game)
+This game is a part of the Udacity Front End Nano Degree. The project was created based off a fork from the starter code provided by the [Udacity Github](https://github.com/udacity/fend-project-memory-game).
 
-For more information about the Udacity Front End Nano Degree, please visit the [Udacity FEND website.](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001)
+For more information about the Udacity Front End Nano Degree, please visit the [Udacity FEND website](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001).
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+- #### Install
+  ###### Bash
 
-To get started, open `js/app.js` and start building out the app's functionality
+      ```git clone https://github.com/borason/fend-project-memory-game.git```
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+      Navigate to the project directory.
+
+      ```open ./index.html```
+
+- #### Gameplay
+
+    ##### About Game
+      This game is based on the classic card game of [Concentration](https://en.wikipedia.org/wiki/Concentration_(game)).
+      The game consists of a 4 by 4 grid of 16 randomly shuffled cards. There are 8 pairs of matching cards.
+
+    ##### Game Instructions
+      Click on two face down cards.
+      If the cards match, then the cards will remain face up.
+      If they do not match, the cards will flip back over.
+      The game ends when all cards are matched (face up).
+      To restart the game press the ![redo icon](/img/redo-icon)
+
 
 ## Contributing
 
