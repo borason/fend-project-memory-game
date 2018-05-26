@@ -31,11 +31,12 @@ For more information about the Udacity Front End Nano Degree, please visit the [
       The game consists of a 4 by 4 grid of 16 randomly shuffled cards. There are 8 pairs of matching cards.
 
     ##### Game Instructions
-      Click on two face down cards.
-      If the cards match, then the cards will remain face up.
-      If they do not match, the cards will flip back over.
-      The game ends when all cards are matched (face up).
-      To restart the game press the ![redo icon](/img/redo-icon)
+    Click on two face down cards.
+    If the cards match, then the cards will remain face up.
+    If they do not match, the cards will flip back over.
+    The game ends when all cards are matched (face up).
+    To restart the game press the
+    ![redo icon](/img/redo-icon)
 
 
 ## Contributing
