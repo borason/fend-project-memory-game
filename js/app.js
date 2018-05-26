@@ -240,6 +240,8 @@ function win () {
     // Stops clock
     stopClock();
     // Takes star rating and appends it to the modal
+    // My original code appended the star rating to the modal, but it copied the star rating from the beginning of the game
+    // My Udacity mentor Andres Pinzon came up with the solution for copying the star rating from the end of the game
     let starCopy = star.cloneNode(true);
     let newStar = starModal.appendChild(starCopy);
     let modalStarRating = starModal.children;
