@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matching Game</title>
   <meta name="description" content="">
+  <title>Matching Game</title>
 
   <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Taviraj" rel="stylesheet">
@@ -18,11 +18,13 @@
 </head>
 <body>
 
+<!-- Title -->
   <div class="container">
     <header>
       <h1 class="text-shadow-drop-center" id="title">Matching Game</h1>
     </header>
 
+<!-- Score Panel -->
     <section class="score-panel">
       <ul class="stars">
         <li><i class="fa fa-star"></i></li>
@@ -32,6 +34,7 @@
         <span class="moves">0</span>
         <span class="moves-text">Moves</span>
 
+<!-- Clock -->
       <div class="clock">
         <div>
           <h4><span class="minutes">0</span>Mins</h4>
@@ -41,11 +44,13 @@
         </div>
       </div>
 
+<!-- Restart Button -->
       <div class="restart">
         <i class="fa fa-repeat fa-lg"></i>
       </div>
     </section>
 
+<!-- Card Deck -->
     <div class="container">
       <ul class="deck">
         <li class="card">
@@ -101,7 +106,6 @@
   </div>
 
 <!-- Modal -->
-
 <div class="modal tracking-in-expand-fwd-bottom" id="winModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -120,7 +124,6 @@
           <h4 id="win-message">
           </h4>
         </div>
-        <!-- <p id="modal-star-text">Stars</p> -->
       </div>
       <div class="modal-footer">
         <div class="btn-group btn-group-vertical">
