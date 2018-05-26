@@ -36,7 +36,7 @@ For more information about the Udacity Front End Nano Degree, please visit the [
     If they do not match, the cards will flip back over.
     The game ends when all cards are matched (face up).
     To restart the game press the
-    ![redo icon](/img/redo-icon)
+    ![redo icon](/img/redo-icon.png)
 
 
 ## Contributing
