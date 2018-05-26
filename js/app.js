@@ -134,8 +134,8 @@ function unFlipCards() {
 // Checks whether two clicked cards match
 function matchCheck() {
   counter();
-  if (faceUp.length === 2) {
-    if(faceUp[0].querySelector('i').classList.value === faceUp[1].querySelector('i').classList.value) {
+  if (faceUp.length == 2) {
+    if(faceUp[0].innerHTML === faceUp[1].innerHTML) {
       match();
     }
     else {
@@ -241,7 +241,7 @@ function win () {
     stopClock();
     // Takes star rating and appends it to the modal
     // My original code appended the star rating to the modal, but it copied the star rating from the beginning of the game
-    // My Udacity mentor Andres Pinzon came up with the solution for copying the star rating from the end of the game
+    // My Udacity mentor Andres Pinzon helped me come up with the solution for copying the star rating from the end of the game
     let starCopy = star.cloneNode(true);
     let newStar = starModal.appendChild(starCopy);
     let modalStarRating = starModal.children;
@@ -270,13 +270,3 @@ function endMessage () {
 }
 
 window.onload = restart();
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
