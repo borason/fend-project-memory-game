@@ -18,29 +18,29 @@ For more information about the Udacity Front End Nano Degree, please visit the [
 - #### Install
   ###### Bash
 
-      ```git clone https://github.com/borason/fend-project-memory-game.git```
+    ```git clone https://github.com/borason/fend-project-memory-game.git```
 
-      Navigate to the project directory.
+    Navigate to the project directory.
 
-      ```open ./index.html```
+    ```open ./index.html```
 
 - #### Gameplay
 
     ##### About Game
-      This game is based on the classic card game of [Concentration](https://en.wikipedia.org/wiki/Concentration_(game)).
-      The game consists of a 4 by 4 grid of 16 randomly shuffled cards. There are 8 pairs of matching cards.
+    This game is based on the classic card game of [Concentration](https://en.wikipedia.org/wiki/Concentration_(game)).\
+    The game consists of a 4 by 4 grid of 16 randomly shuffled cards. There are 8 pairs of matching cards.
 
     ##### Game Instructions
-    Click on two face down cards.
-    If the cards match, then the cards will remain face up.
-    If they do not match, the cards will flip back over.
-    The game ends when all cards are matched (face up).
+    Click on two face down cards.\
+    If the cards match, then the cards will remain face up.\
+    If they do not match, the cards will flip back over.\
+    The game ends when all cards are matched (face up).\
     To restart the game press the
-    ![redo icon](/img/redo-icon.png height=10px)
+    ![redo icon - downloaded from https://use.fontawesome.com/releases/v5.0.13/svgs/solid/redo.svg](/img/redo-icon.png) button.\
+    The game keeps your time after the first click.\
+    The final rating is based on the number of moves made. Each click counts as one move.
 
 
 ## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
