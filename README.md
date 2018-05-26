@@ -2,8 +2,16 @@
 
 ## Table of Contents
 
+* [About](#about)
 * [Instructions](#instructions)
 * [Contributing](#contributing)
+
+## About
+
+
+This game is a part of the Udacity Front End Nano Degree. The project was created based off a fork from the starter code provided by the [Udacity Github.](https://github.com/udacity/fend-project-memory-game)
+
+For more information about the Udacity Front End Nano Degree, please visit the [Udacity FEND website.](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001)
 
 ## Instructions
 
